@@ -8,8 +8,20 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
   <body>
-    <div class="form-container">
+    <div class="form-container dark">
       <h1>Create a New Blog Post</h1>
+      <div class="row toggle">
+        <div class="col">
+          <p>DARK MODE</p>
+        </div>
+        <label class="switch col">
+          <input type="checkbox" id="theme-switcher" />
+          <span class="slider round"></span>
+        </label>
+        <div class="col">
+          <p>LIGHT MODE</p>
+        </div>
+      </div>
       <form id="blogForm">
         <div class="form-group">
           <label for="username">Username:</label>
