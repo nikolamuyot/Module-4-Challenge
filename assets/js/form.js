@@ -12,24 +12,48 @@ document.addEventListener("DOMContentLoaded", function () {
     const title = document.getElementById("title").value;
     const content = document.getElementById("content").value;
 
-    // Create an object to represent the blog post
-    const blogPost = {
-      username: username, // Author of the post
-      title: title, // Title of the post
-      content: content, // Content of the post
-      date: new Date().toISOString(), // The current date and time of the post submission
-    };
+    if (username && title && content) {
+      // Create an object to represent the blog post
+      const blogPost = {
+        username: username, // Author of the post
+        title: title, // Title of the post
+        content: content, // Content of the post
+        date: new Date().toISOString(), // The current date and time of the post submission
+      };
 
-    // Retrieve existing blog posts from localStorage, or initialize an empty array if none exist
-    const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+      // Retrieve existing blog posts from localStorage, or initialize an empty array if none exist
+      const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
 
-    // Add the new blog post to the array of posts
-    blogPosts.push(blogPost);
+      // Add the new blog post to the array of posts
+      blogPosts.push(blogPost);
 
-    // Save the updated array of posts back to localStorage
-    localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
+      // Save the updated array of posts back to localStorage
+      localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
 
-    // Redirect the user to the posts page (blog.html) after submission
-    window.location.href = "blog.html";
+      // Redirect the user to the posts page (blog.html) after submission
+      window.location.href = "blog.html";
+    } else {
+      alert("provide information");
+    }
+
+    // // Create an object to represent the blog post
+    // const blogPost = {
+    //   username: username, // Author of the post
+    //   title: title, // Title of the post
+    //   content: content, // Content of the post
+    //   date: new Date().toISOString(), // The current date and time of the post submission
+    // };
+
+    // // Retrieve existing blog posts from localStorage, or initialize an empty array if none exist
+    // const blogPosts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+
+    // // Add the new blog post to the array of posts
+    // blogPosts.push(blogPost);
+
+    // // Save the updated array of posts back to localStorage
+    // localStorage.setItem("blogPosts", JSON.stringify(blogPosts));
+
+    // // Redirect the user to the posts page (blog.html) after submission
+    // window.location.href = "blog.html";
   });
 });
